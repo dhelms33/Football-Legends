@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <!-- Home Fragment -->
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="edu.msudenver.cs3013.project03.HomeFragment"
+        android:label="@string/Home"
+        tools:layout="@layout/home_fragment">
+
+        <!-- Action to navigate from Home to Teams -->
+        <action
+            android:id="@+id/action_nav_home_to_teams"
+            app:destination="@id/nav_teams"
+            app:popUpTo="@id/nav_home" />
+
+        <!-- Action to navigate from Home to Account -->
+        <action
+            android:id="@+id/action_nav_home_to_account"
+            app:destination="@id/nav_account"
+            app:popUpTo="@id/nav_home" />
+
+    </fragment>
+
+    <!-- Leagues Fragment -->
+    <fragment
+        android:id="@+id/nav_leagues"
+        android:name="edu.msudenver.cs3013.project03.LeaguesFragment"
+        android:label="@string/Leagues"
+        tools:layout="@layout/fragment_leagues">
+
+        <!-- Action to navigate from Leagues to News -->
+        <action
+            android:id="@+id/action_nav_leagues_to_news"
+            app:destination="@id/nav_news"
+            app:popUpTo="@id/nav_leagues" />
+
+    </fragment>
+
+    <!-- Favorites Fragment -->
+    <fragment
+        android:id="@+id/nav_favorites"
+        android:name="edu.msudenver.cs3013.project03.FavoritesFragment"
+        android:label="@string/Favorites"
+        tools:layout="@layout/fragment_favorites">
+    </fragment>
+
+    <!-- Account Fragment -->
+    <fragment
+        android:id="@+id/nav_account"
+        android:name="edu.msudenver.cs3013.project03.AccountFragment"
+        android:label="@string/Account"
+        tools:layout="@layout/fragment_account">
+    </fragment>
+
+    <!-- Archive Fragment -->
+    <fragment
+        android:id="@+id/nav_archive"
+        android:name="edu.msudenver.cs3013.project03.ArchiveFragment"
+        android:label="@string/Archive"
+        tools:layout="@layout/fragment_archive" />
+
+    <!-- Bin Fragment -->
+    <fragment
+        android:id="@+id/nav_bin"
+        android:name="edu.msudenver.cs3013.project03.BinFragment"
+        android:label="@string/Bin"
+        tools:layout="@layout/fragment_bin" />
+
+    <!-- Contact Fragment -->
+    <fragment
+        android:id="@+id/nav_contact"
+        android:name="edu.msudenver.cs3013.project03.ContactFragment"
+        android:label="@string/Contact"
+        tools:layout="@layout/fragment_contact">
+    </fragment>
+
+    <!-- Gallery Fragment -->
+    <fragment
+        android:id="@+id/nav_gallery"
+        android:name="edu.msudenver.cs3013.project03.GalleryFragment"
+        android:label="@string/Gallery"
+        tools:layout="@layout/fragment_gallery">
+    </fragment>
+
+    <!-- News Fragment -->
+    <fragment
+        android:id="@+id/nav_news"
+        android:name="edu.msudenver.cs3013.project03.NewsFragment"
+        android:label="@string/News"
+        tools:layout="@layout/fragment_news">
+    </fragment>
+    <fragment
+        android:id="@+id/nav_featured"
+        android:name="edu.msudenver.cs3013.project03.FeaturedFragment"
+        android:label="@string/featured"
+        tools:layout="@layout/fragment_featured">
+    </fragment>
+
+    <!-- Settings Fragment -->
+    <fragment
+        android:id="@+id/nav_settings"
+        android:name="edu.msudenver.cs3013.project03.SettingsFragment"
+        android:label="@string/Settings"
+        tools:layout="@layout/fragment_settings">
+    </fragment>
+    <!-- Recent Fragment -->
+    <fragment
+        android:id="@+id/nav_recent"
+        android:name="edu.msudenver.cs3013.project03.RecentFragment"
+        android:label="@string/Recent"
+        tools:layout="@layout/fragment_recent">
+    </fragment>
+    <fragment
+        android:id="@+id/nav_teams"
+        android:name="edu.msudenver.cs3013.project03.TeamsFragment"
+        android:label="@string/teams"
+        tools:layout="@layout/fragment_recent">
+    </fragment>
+    <fragment
+        android:id="@+id/nav_maps"
+        android:name="edu.msudenver.cs3013.project03.MapsFragment"
+        android:label="Maps"
+        tools:layout="@layout/activity_maps">
+    </fragment>
+
+
+</navigation>
+
+

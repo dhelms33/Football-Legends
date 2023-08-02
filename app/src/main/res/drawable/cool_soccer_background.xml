@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <solid android:color="#1E824C" />
+
+    <corners android:radius="0dp" />
+
+    <gradient
+        android:type="radial"
+        android:centerX="0.5"
+        android:centerY="0.5"
+        android:startColor="#1E824C"
+        android:endColor="#17482C"
+        android:gradientRadius="300dp" />
+
+    <bitmap
+        android:gravity="center"
+        android:tileMode="repeat" />
+
+</shape>
+<!-- Compare this snippet from app\src\main\res\drawable\cool_soccer_background.xml: -->

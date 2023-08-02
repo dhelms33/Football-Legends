@@ -1,0 +1,10 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- Settings item -->
+    <item
+        android:id="@+id/nav_settings"
+        android:title="@string/Settings"
+        app:showAsAction="never" />
+
+</menu>

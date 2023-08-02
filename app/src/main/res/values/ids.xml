@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="item_team_name" type="id" />
+    <item name="item_team_country" type="id" />
+    <item name="item_team_venue_name" type="id" />
+    <item name="item_team_venue_surface" type="id" />
+    <item name="item_team_photo" type="id" />
+    <item name="item_team_founded" type="id" />
+    <item name="item_team_logo" type="id" />
+    <item name="location_text" type="id" />
+
+
+</resources>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/card_view"
+    android:layout_margin="10dp"
+    android:layout_width="match_parent"
+    android:layout_height="150dp">
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- ImageView for displaying the player's image -->
+        <ImageView
+            android:scaleType="centerCrop"
+            android:src="@drawable/baseline_person_4_24"
+            android:id="@+id/image_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <!-- LinearLayout for containing player information -->
+        <LinearLayout
+            android:orientation="vertical"
+            android:padding="10dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/transparent_white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- TextView for displaying the player's name -->
+            <TextView
+                tools:text="Player Name"
+                android:id="@+id/player_name_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <!-- LinearLayout for containing age and height information -->
+            <LinearLayout
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <!-- TextView for displaying the player's age -->
+                <TextView
+                    tools:text="Age: 22"
+                    android:id="@+id/player_age_tv"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
+
+                <!-- TextView for displaying the player's height -->
+                <TextView
+                    tools:text="Height: 22 cm"
+                    android:id="@+id/player_height_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+        </LinearLayout>
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

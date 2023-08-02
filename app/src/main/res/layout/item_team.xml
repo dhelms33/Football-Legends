@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="8dp">
+    <ImageView
+        android:id="@+id/item_team_logo"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:background="@color/colorPrimary" />
+    <TextView
+        android:id="@+id/item_team_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/item_team_logo"
+        app:layout_constraintTop_toTopOf="parent"
+
+        />
+    <TextView
+        android:id="@+id/item_team_country"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/design_default_color_secondary"
+        app:layout_constraintStart_toStartOf="@+id/item_team_name"
+        app:layout_constraintTop_toBottomOf="@+id/item_team_name"
+         />
+    <TextView
+        android:id="@+id/item_team_founded"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@+id/item_team_country"
+        app:layout_constraintTop_toBottomOf="@+id/item_team_country"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>

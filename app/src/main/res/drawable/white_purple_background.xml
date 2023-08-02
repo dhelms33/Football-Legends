@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="400dp"
+    android:height="200dp"
+    android:viewportWidth="400"
+    android:viewportHeight="200">
+
+    <!-- White background -->
+    <path
+        android:pathData="M0,200L0,50C33.3,83.3,66.7,-16.7,100,50C133.3,116.7,166.7,16.7,200,50C233.3,83.3,266.7,0,300,50C333.3,100,366.7,100,400,50L400,200Z"
+        android:fillColor="#FFFFFF" />
+
+    <!-- Purple wave -->
+    <path
+        android:pathData="M0,200L0,50C33.3,83.3,66.7,0,100,50C133.3,100,166.7,116.7,200,50C233.3,-16.7,266.7,83.3,300,50C333.3,16.7,366.7,100,400,50L400,200Z"
+        android:fillColor="#D858EF" />
+
+</vector>

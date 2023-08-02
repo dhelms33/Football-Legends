@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--adds functionality to toolbar-->
+<com.google.android.material.appbar.MaterialToolbar
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    app:title="@string/app_name"
+    android:id="@+id/toolbar"
+    app:navigationIcon="@drawable/baseline_menu_24"
+    style="@style/Widget.MaterialComponents.Toolbar.PrimarySurface"
+    android:layout_height="?attr/actionBarSize"/>
