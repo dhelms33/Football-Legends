@@ -32,7 +32,7 @@ class HomeFragment : Fragment() {
         val checkbox = view.findViewById<CheckBox>(R.id.checkbox_home) //initalization of checkbox
         val button = view.findViewById<Button>(R.id.navButton) //initalization of button
         val button2 = view.findViewById<Button>(R.id.navButton2)
-
+        val button3 = view.findViewById<Button>(R.id.navButton3)
 
         button?.setOnClickListener { //if clicked
             val isChecked = checkbox.isChecked //see if this checbox is checked
@@ -48,9 +48,13 @@ class HomeFragment : Fragment() {
 
 
         }
-        //from home to api
+        //from home to maps
         button2.setOnClickListener {
-            Navigation.findNavController(view).navigate(R.id.action_nav_home_to_teams)
+            Navigation.findNavController(view).navigate(R.id.action_nav_home_to_maps)
+        }
+        //from home to create
+        button3.setOnClickListener {
+            Navigation.findNavController(view).navigate(R.id.action_nav_home_to_create)
         }
 
 

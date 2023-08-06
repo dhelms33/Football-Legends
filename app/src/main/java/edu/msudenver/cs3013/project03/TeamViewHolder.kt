@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import edu.msudenver.cs3013.project03.model.TeamResponse
 import edu.msudenver.cs3013.project03.model.TeamUIModel
 
-class TeamViewHolder(
+class TeamViewHolder( //initializes response that is used in recyclerview
     private val containerView: View,
     private val imageLoader: ImageLoader,
     private val onClickListener: OnClickListener

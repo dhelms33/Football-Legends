@@ -54,9 +54,9 @@ class SecondActivity : AppCompatActivity() {
     private fun showWelcomeDialog(userName: String?) {
         val builder = AlertDialog.Builder(this)
         val message = if (userName.isNullOrEmpty()) {
-            "Thank you for using Football Legends."
+            "Thank you for using Football Legends,\n we have updated the app, see the home menu for more information."
         } else {
-            "Welcome, $userName! Thank you for using Football Legends."
+            "Welcome, $userName!\nWe have updated Football Legends, see the home menu for more information."
         }
         builder.setMessage(message)
 

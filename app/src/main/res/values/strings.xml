@@ -38,8 +38,9 @@
     <string name="seller">Everything football in one place</string>
     <string name="favorite_players">James Rodriguez</string>
     <string name="where_to2">Access your hub in the account or refer to the menus in the upper left or at the bottom of the screen.</string>
-    <string name="settings_details">Be sure to check out our new API implementation!</string>
-    <string name="settings_details2">Button to API implementation</string>
+    <string name="settings_details">Be sure to check out our new map and create below and in the drawer menu!</string>
+    <string name="settings_details2">Button to maps</string>
+    <string name="settings_details3">Button to create</string>
     <string name="Manchester_City">Manchester City</string>
     <string name="Discarded">Trash</string>
     <string name="Archived">Archived</string>
@@ -72,6 +73,8 @@
     <string name="content">Content</string>
     <string name="home_fragment">Home Fragment</string>
     <string name="tickets_fragment">Tickets Fragment</string>
+    <string name="checkbox_create">Are you a professional player?</string>
+
     <string name="offers_fragment">Offers Fragment</string>
     <string name="rewards_fragment">Rewards Fragment</string>
     <string name="settings_fragment">Settings Fragment</string>
@@ -84,7 +87,7 @@
     <string name="Username">Username</string>
     <string name="Header_text">Please enter your username and password below to login:</string>
     <string name="checkbox_text">Do you like Manchester City? Check me and click the above button!</string>
-    <string name="checkbox_checked">Manchester City has been added to your account!</string>
+    <string name="checkbox_checked">Manchester City has won the treble! Rejoice!</string>
     <string name="header_text">Please enter your username and password below to login:</string>
     <string name="login_form_entry_error">Wrong username/password, please try again!</string>
     <string name="login_error">Either your username or password is not recognized! Please try again.</string>

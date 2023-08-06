@@ -5,5 +5,17 @@
     <color name="transparent_white">#B4FFFFFF</color>
     <color name="transparent_black">#B4000000</color>
     <color name="colorPrimary">#6200EE</color>
+<!--    <resources>-->
+<!--        &lt;!&ndash; Light Theme Colors &ndash;&gt;-->
+<!--        <color name="colorPrimary">#3F51B5</color>-->
+<!--        <color name="colorPrimaryDark">#303F9F</color>-->
+<!--        <color name="colorAccent">#FF4081</color>-->
+
+<!--        &lt;!&ndash; Dark Theme Colors &ndash;&gt;-->
+<!--        <color name="colorPrimaryDarkTheme">#303030</color>-->
+<!--        <color name="colorPrimaryDarkDarkTheme">#202020</color>-->
+<!--        <color name="colorAccentDarkTheme">#FF9800</color>-->
+<!--    </resources>-->
+
 
 </resources>

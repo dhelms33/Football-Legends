@@ -17,7 +17,7 @@ class DetailFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
+    override fun onCreate(savedInstanceState: Bundle?) { //oncreate
         super.onCreate(savedInstanceState)
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
@@ -29,7 +29,7 @@ class DetailFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_detail, container, false)
+        return inflater.inflate(R.layout.fragment_detail, container, false) //inflate xml
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -42,7 +42,7 @@ class DetailFragment : Fragment() {
         val locationViewModel = ViewModelProvider(requireActivity()).get(LocationViewModel::class.java)
 
         // Set up an observer for the location property of the locationViewModel
-        locationViewModel.location.observe(viewLifecycleOwner, Observer { location ->
+        locationViewModel.location.observe(viewLifecycleOwner, Observer { location -> //get location from livedata viewmodel using an observer
             // Call the updateText method with the location parameter
             updateText(location)
         })
@@ -50,10 +50,10 @@ class DetailFragment : Fragment() {
 
     private fun updateText(location: String) {
         // Update the text of the user_location_tv TextView with the location parameter
-        view?.findViewById<TextView>(R.id.location_text)?.text = location
+        view?.findViewById<TextView>(R.id.location_text)?.text = location //put this data in a textview
     }
 
-    companion object {
+    companion object { //factory companion object
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
             DetailFragment().apply {

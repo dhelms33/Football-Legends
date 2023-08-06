@@ -1,5 +1,6 @@
 package edu.msudenver.cs3013.project03
 
+
 import android.Manifest.permission.ACCESS_FINE_LOCATION
 import android.annotation.SuppressLint
 import android.content.Context
@@ -45,7 +46,7 @@ import com.google.android.libraries.places.api.model.TypeFilter
 import com.google.android.libraries.places.api.net.FetchPlaceRequest
 import com.google.android.libraries.places.api.net.FindAutocompletePredictionsRequest
 import com.google.android.libraries.places.api.net.PlacesClient
-import edu.msudenver.cs3013.project03.databinding.ActivityMapsBinding
+import edu.msudenver.cs3013.project03.databinding.ActivityMainBinding
 import java.util.Arrays
 
 class MapsFragment : Fragment(), OnMapReadyCallback {
@@ -53,7 +54,7 @@ class MapsFragment : Fragment(), OnMapReadyCallback {
     private var carMarker: Marker? = null
 
     private lateinit var mMap: GoogleMap
-    private lateinit var binding: ActivityMapsBinding
+    private lateinit var binding: ActivityMainBinding
     private lateinit var requestPermissionLauncher: ActivityResultLauncher<String>
     private lateinit var button: Button // Define the button variable here
     private lateinit var locationText: String
@@ -70,8 +71,7 @@ class MapsFragment : Fragment(), OnMapReadyCallback {
         savedInstanceState: Bundle?
 
     ): View {
-        binding = ActivityMapsBinding.inflate(inflater, container, false)
-        return binding.root
+        return inflater.inflate(R.layout.fragment_maps, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -81,7 +81,7 @@ class MapsFragment : Fragment(), OnMapReadyCallback {
         button = view.findViewById(R.id.maps_mark_location_button)
 
         // Prepare the ViewModel here
-//        prepareViewModel()
+        prepareViewModel()
 
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         val mapFragment =
@@ -94,7 +94,7 @@ class MapsFragment : Fragment(), OnMapReadyCallback {
                 if (isGranted) {
                     context?.let {
                         getLastLocation(onLocation = { location ->
-                            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(location, 15f))
+                            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(location, 7f))
                         })
                     }
                 } else {
@@ -107,11 +107,7 @@ class MapsFragment : Fragment(), OnMapReadyCallback {
                 }
             }
 
-        button.setOnClickListener {
-            if (hasLocationPermission()) {
-                findPlaces()
-            }
-        }
+
     }
 
     private fun hasLocationPermission(): Boolean =
@@ -122,10 +118,16 @@ class MapsFragment : Fragment(), OnMapReadyCallback {
         ) == PackageManager.PERMISSION_GRANTED
 
     override fun onMapReady(googleMap: GoogleMap) {
-        mMap = googleMap.apply {
-            setOnMapClickListener { latLng ->
-                addOrMoveSelectedPositionMarker(latLng)
+        mMap = googleMap
+        //turn on zoom
+        mMap.uiSettings.isZoomControlsEnabled = true
+        when {
+            shouldShowRequestPermissionRationale(ACCESS_FINE_LOCATION) -> {
+                showPermissionRationale {
+                    requestPermissionLauncher.launch(ACCESS_FINE_LOCATION)
+                }
             }
+            else -> requestPermissionLauncher.launch(ACCESS_FINE_LOCATION)
         }
     }
 
@@ -156,7 +158,7 @@ class MapsFragment : Fragment(), OnMapReadyCallback {
             .title(title)
             .position(location)
             .apply {
-                markerIcon?.let { icon(markerIcon) }
+                markerIcon?.let { icon(markerIcon) } //modified this line of code
             }
     )
 
@@ -177,7 +179,9 @@ class MapsFragment : Fragment(), OnMapReadyCallback {
     }
 
     private fun saveLocation(latLng: LatLng) {
-        val sharedPreferences = requireContext().getSharedPreferences("MyPreferences", MODE_PRIVATE)
+        val sharedPreferences = requireContext().getSharedPreferences("MyPreferences",
+            Context.MODE_PRIVATE
+        )
         sharedPreferences.edit().apply {
             putString("latitude", latLng.latitude.toString())
             putString("longitude", latLng.longitude.toString())
@@ -186,7 +190,7 @@ class MapsFragment : Fragment(), OnMapReadyCallback {
     }
 
     private fun updateMapLocation(location: LatLng) {
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(location, 7f))
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(location, 2f))
     }
 
     private fun updateMapLocationWithMarker(location: LatLng): LatLng {
@@ -238,7 +242,7 @@ class MapsFragment : Fragment(), OnMapReadyCallback {
                         .setCountry("US")
                         .setTypeFilter(TypeFilter.ESTABLISHMENT)
                         .setSessionToken(AutocompleteSessionToken.newInstance())
-                        .setQuery("Park")
+                        .setQuery("Soccer Field")
                         .build()
 
                     placesClient.findAutocompletePredictions(request)
@@ -284,25 +288,25 @@ class MapsFragment : Fragment(), OnMapReadyCallback {
                 }
             }
     }
-//    private fun prepareViewModel() {
-//        val locationViewModel =
-//            ViewModelProvider(requireActivity()).get(LocationViewModel::class.java)
-//        updateText(locationViewModel.location.value ?: "")
-//
-//        // Set click listener for the button to call markParkedCar function
-//        button.setOnClickListener {
-//            markParkedCar()
-//            getLastLocation { location ->
-//                locationText =
-//                    "Latitude: ${location.latitude}, Longitude: ${location.longitude}" //was not calling getLastLocation inside of prepareviewmodel
-//                locationViewModel.updateLocation(locationText)
-//            }
-//        }
-//    }
+    private fun prepareViewModel() {
+        val locationViewModel =
+            ViewModelProvider(requireActivity()).get(LocationViewModel::class.java)
+        updateText(locationViewModel.location.value ?: "")
 
-//    private fun updateText(location: String) {
-//        view?.findViewById<TextView>(R.id.mapsFragment)?.text = location
-//    }
+        // Set click listener for the button to call markParkedCar function
+        button.setOnClickListener {
+            findPlaces()
+            getLastLocation { location ->
+                locationText =
+                    "Your current location is \nLatitude: ${location.latitude}, Longitude: ${location.longitude}" //was not calling getLastLocation inside of prepareviewmodel
+                locationViewModel.updateLocation(locationText)
+            }
+        }
+    }
+
+    private fun updateText(location: String) {
+        view?.findViewById<TextView>(R.id.location_text)?.text = location
+    }
 
 
     private fun showPermissionRationale(
@@ -370,6 +374,7 @@ class MapsFragment : Fragment(), OnMapReadyCallback {
 
 
 }
+
 
 
 

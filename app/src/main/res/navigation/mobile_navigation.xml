@@ -12,13 +12,19 @@
         android:label="@string/Home"
         tools:layout="@layout/home_fragment">
 
-        <!-- Action to navigate from Home to Teams -->
+        <!-- Action to navigate from Home to maps -->
         <action
-            android:id="@+id/action_nav_home_to_teams"
-            app:destination="@id/nav_teams"
+            android:id="@+id/action_nav_home_to_maps"
+            app:destination="@id/nav_maps"
             app:popUpTo="@id/nav_home" />
 
+        <!-- Action to navigate from Home to create -->
+        <action
+            android:id="@+id/action_nav_home_to_create"
+            app:destination="@id/nav_player_name"
+            app:popUpTo="@id/nav_home" />
         <!-- Action to navigate from Home to Account -->
+
         <action
             android:id="@+id/action_nav_home_to_account"
             app:destination="@id/nav_account"
@@ -125,8 +131,14 @@
         android:id="@+id/nav_maps"
         android:name="edu.msudenver.cs3013.project03.MapsFragment"
         android:label="Maps"
-        tools:layout="@layout/activity_maps">
+        tools:layout="@layout/fragment_maps">
     </fragment>
+<fragment
+        android:id="@+id/nav_player_name"
+        android:name="edu.msudenver.cs3013.project03.PlayerNameFragment"
+        android:label="Create"
+        tools:layout="@layout/fragment_player_name"/>
+
 
 
 </navigation>

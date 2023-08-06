@@ -10,7 +10,7 @@
         android:name="com.google.android.gms.maps.SupportMapFragment"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        map:layout_constraintBottom_toTopOf="@+id/maps_mark_location_button"
+        map:layout_constraintBottom_toTopOf="@id/maps_mark_location_button"
         map:layout_constraintTop_toTopOf="parent"
         tools:context=".ThirdActivity" />
 
@@ -18,7 +18,19 @@
         android:id="@+id/maps_mark_location_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="I'm parked here"
-        map:layout_constraintBottom_toBottomOf="parent" />
+        android:text="Find a Soccer Field! "
+        map:layout_constraintTop_toBottomOf="@id/maps_map_fragment"
+        map:layout_constraintBottom_toTopOf="@id/detailFragment" />
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/detailFragment"
+        android:name="edu.msudenver.cs3013.project03.DetailFragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        map:layout_constraintTop_toBottomOf="@+id/maps_mark_location_button"
+        map:layout_constraintBottom_toBottomOf="parent"
+         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+

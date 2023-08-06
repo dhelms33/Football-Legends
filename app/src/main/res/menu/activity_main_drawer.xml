@@ -51,6 +51,10 @@
             android:id="@+id/nav_maps"
             android:icon="@drawable/baseline_map_24"
             android:title="Map" />
+        <item
+            android:id="@+id/nav_player_name"
+            android:icon="@drawable/baseline_person_add_24"
+            android:title="Create" />
     </group>
 
     <!-- Bottom group of menu items -->

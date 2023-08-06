@@ -45,6 +45,14 @@
     <!-- Where To TextView 1 -->
 
     <!-- Where To TextView 2 -->
+
+    <!-- Where To TextView 3 -->
+
+    <!-- textview informing user about API Button -->
+
+    <!--From Home to Teams-->
+
+    <!--From Home to account-->
     <TextView
         android:id="@+id/where_to1"
         android:layout_width="match_parent"
@@ -60,26 +68,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.255" />
+        app:layout_constraintVertical_bias="0.231" />
 
-    <!-- Where To TextView 3 -->
-    <TextView
-        android:id="@+id/where_to2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_margin="8dp"
-        android:shadowColor="@color/material_dynamic_primary20"
-        android:text="@string/where_to2"
-        android:textAlignment="center"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.344" />
-
-    <!-- textview informing user about API Button -->
     <TextView
         android:id="@+id/where_to3"
         android:layout_width="match_parent"
@@ -94,9 +84,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.442" />
+        app:layout_constraintVertical_bias="0.296" />
 
-    <!--From Home to Teams-->
+    <Button
+        android:id="@+id/navButton3"
+        android:layout_width="match_parent"
+        android:layout_height="98dp"
+        android:text="@string/settings_details3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.592"
+        tools:layout_editor_absoluteX="-8dp" />
+
     <Button
         android:id="@+id/navButton2"
         android:layout_width="match_parent"
@@ -104,10 +103,10 @@
         android:text="@string/settings_details2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.563"
-        tools:layout_editor_absoluteX="0dp" />
+        app:layout_constraintVertical_bias="0.409"
+        tools:layout_editor_absoluteX="-8dp" />
 
-    <!--From Home to account-->
+
     <Button
         android:id="@+id/navButton"
         android:layout_width="match_parent"

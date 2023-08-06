@@ -59,5 +59,18 @@
         <item name="android:layout_margin">8dp</item>
         <item name="android:padding">8dp</item>
     </style>
+    <style name="AppTheme" parent="Theme.AppCompat.Light">
+        <!-- Customize your light theme attributes here -->
+    </style>
+    <!-- Dark Theme -->
+    <style name="AppTheme.Dark" parent="Theme.AppCompat">
+        <!-- Customize your dark theme attributes here -->
+<!--        <item name="colorPrimary">@color/colorPrimaryDarkTheme</item>-->
+<!--        <item name="colorPrimaryDark">@color/colorPrimaryDarkDarkTheme</item>-->
+<!--        <item name="colorAccent">@color/colorAccentDarkTheme</item>-->
+        <!-- Add more dark theme attributes here -->
+    </style>
+
+
 
 </resources>
